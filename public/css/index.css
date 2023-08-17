@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+/* Buat semua --Hutri */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(#535fff,#7597de);
+    padding-top: 100px;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Buat Logo */
+header .logo{
+    color: azure;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cardtop{
+    color: azure;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Buat keseluruhan list header */
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buat list dari ul header */
+header ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+/* Buat satu persatu list header link */
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: azure;
+    border-radius: 20px;
+}
+
+/* Buat animasi hover hover */
+header ul li a:hover, .active{
+    background-color: azure;
+    color: #2b1055;
+}
+
+
+
+
+  
