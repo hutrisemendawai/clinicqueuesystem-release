@@ -24,6 +24,7 @@
                                 <th>Nomor Antrian</th>
                                 <th>Keluhan</th>
                                 <th>Nama Pasien</th>
+                                <th>Kontak</th>
                                 <th>Tindakan</th>
                             </tr>
                         </thead>
@@ -33,6 +34,7 @@
                                     <td>{{ $queue->id }}</td>
                                     <td>{{ $queue->description }}</td>
                                     <td>{{ $queue->user->name }}</td>
+                                    <td>{{ $queue->user->phone_number }}</td>
                                     <td>
                                         <form action="{{ route('queues.destroyForAdmin', $queue) }}" method="POST">
                                             @csrf
