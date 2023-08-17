@@ -36,7 +36,12 @@
                         </li>
                     @endif
                 @else
-                    <li><a href="#">Dashboard</a></li>
+                    @if (auth()->user()->type === 'user')
+                        <li><a href="{{ route('home') }}">Dashboard</a></li>
+                    @elseif (auth()->user()->type === 'admin')
+                        <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
+                    @endif
+            
                     <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();

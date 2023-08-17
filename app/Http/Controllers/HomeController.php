@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Models\Queue;
+use Illuminate\Support\Facades\Auth;
+
  
 class HomeController extends Controller
 {
@@ -24,11 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = auth()->user(); // Get the authenticated user
-        if ($user->type === 1) { // Check if the user's type is 'admin'
-            return redirect()->route('admin.home');
-        }
-        return view('home', compact('user'));
+        $user = Auth::user(); // Get the authenticated user
+        $userType = $user->type; // Get the user's type
+        return view('home', compact('user', 'userType'));
     }
  
     /**
@@ -38,8 +38,10 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
+        $user = Auth::user();
+        $userType = $user->type;
         $queues = Queue::with('user')->get(); // Eager load the associated user
-        return view('adminhome', compact('queues'));
+        return view('adminhome', compact('queues','userType'));
     }
     
     /**
