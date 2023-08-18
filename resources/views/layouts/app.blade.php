@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinik - Antri Simpel</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+
+    {{-- Favicon --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -41,7 +44,6 @@
                     @elseif (auth()->user()->type === 'admin')
                         <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
                     @endif
-            
                     <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
