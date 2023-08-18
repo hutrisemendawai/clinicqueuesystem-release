@@ -38,7 +38,7 @@ class QueueController extends Controller
         $queue->delete();
 
         // Determine the redirect route based on user's role
-        if (auth()->user()->type === 1) { // Assuming 1 corresponds to 'admin' in your database
+        if (auth()->user()->type === 1) { 
             return redirect()->route('admin.home')->with('success', 'Queue deleted successfully');
         } else {
             return redirect()->route('home')->with('success', 'Queue deleted successfully');

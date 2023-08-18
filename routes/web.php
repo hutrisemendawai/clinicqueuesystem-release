@@ -27,8 +27,3 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 });
 Route::delete('/queues/{queue}/admin', [QueueController::class, 'destroyForAdmin'])->middleware('auth')->name('queues.destroyForAdmin');
    
-//Admin Routes List
-Route::middleware(['auth', 'user-access:manager'])->group(function () {
-   
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
-});

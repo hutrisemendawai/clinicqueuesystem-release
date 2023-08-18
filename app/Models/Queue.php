@@ -20,6 +20,6 @@ class Queue extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'queue_owner'); // Assuming your foreign key is 'user_id'
+        return $this->belongsTo(User::class, 'queue_owner');
     }
 }
